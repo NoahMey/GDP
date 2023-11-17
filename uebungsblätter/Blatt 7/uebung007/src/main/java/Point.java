@@ -29,6 +29,8 @@ class Point {
 
     public static void main(String[] args) {
         // hier können Sie ihren eigenen Testcode schreiben.
+        Point np = new Point(1, 2);
+        if (np.getX()) 
     }
 
 }

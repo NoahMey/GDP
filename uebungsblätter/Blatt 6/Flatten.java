@@ -4,7 +4,7 @@ public class Flatten {
         int count = 0;
         for(int x = 0; x<a.length; x++){
             for(int elem : a[x]){
-                System.out.println(elem);
+                //System.out.println(elem);
                 count += 1;
             }
         }
