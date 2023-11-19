@@ -3,8 +3,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-class Rectangle {
-
+public class Filling {
     Point lowerLeftCorner;
     double width;
     double height;
@@ -13,11 +12,11 @@ class Rectangle {
      * Kreiert ein neues Rectangle Objekt, welches ein Rechteck durch den
      * unteren Linken Punkt, sowie dessen Breite und Höhe definiert.
      */
-    Rectangle(Point lowerLeftCorner, double width, double height) {
+    Filling(Point lowerLeftCorner, double width, double height) {
         // TODO - Ihre Implementation
         this.lowerLeftCorner = lowerLeftCorner;
         this.width = width;
-        this.height = height;        
+        this.height = height;
     }
 
     /*
@@ -27,15 +26,30 @@ class Rectangle {
      */
     void draw() {
         // TODO - Ihre Implementation
-        TurtleUtils.setTurtlePosition(lowerLeftCorner);
-        forward(height);
+        TurtleUtils.setTurtlePosition(lowerLeftCorner); 
+        penUp();
         turnRight(90);
-        forward(width);
-        turnRight(90);
-        forward(height);
-        turnRight(90);
-        forward(width);
-        
+        forward(width/2);
+        turnLeft(90);
+        forward(height/2);
+        penDown();
+        if(height < 10){
+            penColor(YELLOW);
+            fill();      
+        }
+        if((height > 10) && (height < 30)){
+            penColor(ORANGE);
+            fill();      
+        }
+        if((height > 30) && (height < 60)){
+            penColor(RED);
+            fill();      
+        }
+        if((height > 60) && (height < 80)){
+            penColor(GREY);
+            fill();      
+        }
+        fill();      
         reset();
     }
 
@@ -43,9 +57,8 @@ class Rectangle {
      * Einfaches Testprogramm um Ihre Zeichnung zu testen
      */
     public static void main(String[] args) {
-
         clear();
-        Rectangle rect = new Rectangle(new Point(-30, -50), 60, 100);
+        Filling rect = new Filling(new Point(-30, -50),20, 100);
         rect.draw();
 
         BufferedImage img  = drawing();
