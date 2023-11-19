@@ -8,6 +8,8 @@ class Point {
      * Erzeugt ein neues Objekt mit den Koordinaten x und y
      */
     Point(double x, double y) {
+        this.x = x;
+        this.y = y;
         // TODO - Ihre Implementation
     }
 
@@ -16,7 +18,7 @@ class Point {
      */
     double getX() {
         // TODO - Ihre Implementation
-        return 0.0;
+        return x;
     }
 
     /**
@@ -24,13 +26,13 @@ class Point {
      */
     double getY() {
         // TODO - Ihre Implementation
-        return 0.0;
+        return y;
     }
 
     public static void main(String[] args) {
         // hier können Sie ihren eigenen Testcode schreiben.
         Point np = new Point(1, 2);
-        if (np.getX()) 
+        System.out.println(np.getX());
     }
 
 }

@@ -15,6 +15,15 @@ class Rectangle {
      */
     Rectangle(Point lowerLeftCorner, double width, double height) {
         // TODO - Ihre Implementation
+        forward(height);
+        turnRight(90);
+        forward(width);
+        turnRight(90);
+        forward(height);
+        turnRight(90);
+        forward(width);
+        reset();
+        
     }
 
     /*
@@ -24,6 +33,7 @@ class Rectangle {
      */
     void draw() {
         // TODO - Ihre Implementation
+        TurtleUtils.setTurtlePosition(this.lowerLeftCorner);
     }
 
     /**
