@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class Stack {
 
     // In diesem Array sollen die Elemente im Stack gespeichert werden
-    Integer[] data = null;
+    Integer[] data;
     int size = 0;
 
     // TODO fügen Sie hier weitere Felder hinzu, die Sie brauchen um den Stack zu implementieren
@@ -18,7 +18,7 @@ public class Stack {
      */
     public Stack(int capacity) {
         // TODO Ihre Implementation
-        Integer[] data = new Integer[capacity];
+        data = new Integer[capacity];
     }
 
     /**
@@ -30,6 +30,7 @@ public class Stack {
         // TODO Ihre Implementation
         if(size < data.length){
             data[size] = element;
+            size += 1;
             return true;
         }
         return false;
@@ -44,7 +45,7 @@ public class Stack {
         if (size == 0) {
             return null;
         }
-        return data[size];
+        return data[size-1];
     }
 
     /**
@@ -71,7 +72,16 @@ public class Stack {
             for (int i = 0; i < 17; i = i + 1) {
                 stack.push(Integer.valueOf(i));
             }
-        System.out.println(stack.toString());
+
+        Stack stack2 = new Stack(10);
+        
+        for (int i = 0; i<6; i = i+2){
+            stack2.push(i);
+        }
+        System.out.println(stack2.push(42));
+        System.out.println(stack2.pop());
+        System.out.println(stack2.toString());
+        System.out.println(stack2.size());
     }
 
 }
