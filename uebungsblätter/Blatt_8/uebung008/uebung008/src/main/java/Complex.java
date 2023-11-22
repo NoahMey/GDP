@@ -9,6 +9,8 @@ class Complex {
      */
     Complex(double real, double imag) {
         // TODO Ihre Implementation
+        this.real = real;
+        this.imag = imag;
     }
 
     /**
@@ -17,9 +19,9 @@ class Complex {
      * als neue Komplexe Zahl zahl zurück.
      */
     public Complex add(Complex other) {
-
+        Complex result = new Complex (other.real +real, other.imag +imag);
         // TODO Ihre Implementation
-        return null;
+        return (result);
     }
 
     /* Addiert die Komplexe Zahl other mit der durch dieses
@@ -29,6 +31,8 @@ class Complex {
     */
     public void addInplace(Complex other) {
         // TODO Ihre Implementation
+        real += other.real;
+        imag += other.imag;
     }
 
     /**
@@ -37,8 +41,7 @@ class Complex {
      * als neue Komplexe Zahl zahl zurück.
      */
     Complex multiply(Complex other) {
-        // TODO Ihre Implementation
-        return null;
+        return (new Complex (other.real *real, other.imag*imag));
     }
 
     /* Multipliziert die Komplexe Zahl other mit der durch dieses
@@ -48,6 +51,8 @@ class Complex {
     */
     void multiplyInplace(Complex other) {
         // TODO Ihre Implementation
+        real *= other.real;
+        imag *= other.imag;
     }
 
 
@@ -55,8 +60,17 @@ class Complex {
      * Gibt den Absolutwert der komplexen Zahl zurück
      */
     public double abs() {
-        // TODO Ihre Implementation
-        return 0.0;
+        double result = Math.sqrt((Math.pow(real, 2) + Math.pow(imag, 2)));
+        return result;
     }
 
+
+
+    // public static void main(String[]args){
+    //     Complex nc = new Complex(1, 2);
+    //     Complex nc2 = new Complex(2, 4);
+    //     nc.multiplyInplace(nc2);
+    //     System.out.println(nc.imag);
+    //     System.out.println(nc.abs());
+    // }
 }
