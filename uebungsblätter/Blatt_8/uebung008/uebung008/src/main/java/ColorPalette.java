@@ -32,6 +32,10 @@ class ColorPalette {
      */
     static Color colorToGreyscale(Color color) {
         // TODO Ihre Implementation
-        return null;
+        int newRed = (int) (color.getRed()*0.2989);
+        int newGreen = (int) (color.getGreen()*0.5870);
+        int newBlue = (int) (color.getBlue()*0.1140);
+        double avg = (color.getRed()*0.2989) + (color.getGreen()*0.5870) + (color.getBlue()*0.1140);
+        return new Color((int)avg, (int)avg, (int)avg);
     }
 }

@@ -75,9 +75,16 @@ class Mandelbrot {
      * iterationen erreicht wurde.
      */
     MandelbrotResult computeMandelbrot(Complex c, int maxIterations) {
-
-        // TODO Ihre Implementation
-        return null;
+        int iteration = 0;
+        Complex z = new Complex(0, 0); // erstes Z = 0;
+        while ((z.abs() < 2)&& (iteration < maxIterations)) {
+            z = z.multiply(z);
+            z = z.add(c); 
+            iteration += 1;
+        }
+        MandelbrotResult result = new MandelbrotResult(maxIterations, iteration, z);
+        // TODO Ihre Implementation (done)
+        return (result);
 
     }
 
@@ -88,9 +95,10 @@ class Mandelbrot {
      */
     Complex pixelPosToComplexNumber(int i, int j,
                                     double scaling, double panX, double panY) {
+        // TODO Ihre Implementation (done)
+        Complex result = new Complex(i*scaling+panX, j*scaling+panY);
 
-                                        // TODO Ihre Implementation
-        return null;
+        return result;
 
     }
 
@@ -106,6 +114,12 @@ class Mandelbrot {
      */
     void createMandelbrotVisualization(double scaling,
                                       double panX, double panY, int maxIterations) {
+        for(int i = 0; i < IMAGE_WIDTH; i++){
+            for(int j = 0; j < IMAGE_HEIGHT; j++){
+                //setPixel(i, j, ColorPalette.getColor(computeMandelbrot(pixelPosToComplexNumber(i, j, scaling, panX, panY), maxIterations)));
+                setPixel(i, j, ColorPalette.colorToGreyscale(ColorPalette.getColor(computeMandelbrot(pixelPosToComplexNumber(i, j, scaling, panX, panY), maxIterations))));
+            }
+        }
 
         // TODO Ihre Implementation
 

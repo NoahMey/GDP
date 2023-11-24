@@ -41,7 +41,8 @@ class Complex {
      * als neue Komplexe Zahl zahl zurück.
      */
     Complex multiply(Complex other) {
-        return (new Complex (other.real *real, other.imag*imag));
+        //double realteil = (((other.real *real)-(other.imag*imag)) + (other.real*imag + other.imag *real));
+        return (new Complex (((other.real *real)-(other.imag*imag)), ((other.real*imag) + (other.imag *real))));
     }
 
     /* Multipliziert die Komplexe Zahl other mit der durch dieses
@@ -51,8 +52,10 @@ class Complex {
     */
     void multiplyInplace(Complex other) {
         // TODO Ihre Implementation
-        real *= other.real;
-        imag *= other.imag;
+        double newReal = ((other.real *real)-(other.imag*imag));
+        double newImag =  ((other.real*imag) + (other.imag *real));
+        real = newReal;
+        imag = newImag;
     }
 
 
