@@ -8,7 +8,7 @@ public class Stack {
 
     // In diesem Array sollen die Elemente im Stack gespeichert werden
     Integer[] data;
-    int size = 0;
+    int entrys = 0;
 
     // TODO fügen Sie hier weitere Felder hinzu, die Sie brauchen um den Stack zu implementieren
 
@@ -19,6 +19,7 @@ public class Stack {
     public Stack(int capacity) {
         // TODO Ihre Implementation
         data = new Integer[capacity];
+        System.out.println(data.length);
     }
 
     /**
@@ -28,9 +29,9 @@ public class Stack {
      */
     boolean push(Integer element) {
         // TODO Ihre Implementation
-        if(size < data.length){
-            data[size] = element;
-            size += 1;
+        if (entrys < data.length) {
+            data[entrys] = element;
+            entrys += 1;
             return true;
         }
         return false;
@@ -42,10 +43,14 @@ public class Stack {
      */
     Integer pop() {
         // TODO Ihre Implementation
-        if (size == 0) {
+        if (entrys == 0) {
             return null;
         }
-        return data[size-1];
+        int delInt = data[entrys-1];
+        data[entrys-1] = null;
+        entrys -= 1;
+        return delInt;
+        
     }
 
     /**
@@ -54,7 +59,7 @@ public class Stack {
      */
     int size() {
         // TODO Ihre Implementation
-        return size;
+        return entrys;
     }
 
     /**
@@ -68,20 +73,18 @@ public class Stack {
     public static void main(String[] args) {
 
          // Schreiben Sie hier ihre eigenen Testprogramme
-         Stack stack = new Stack(17);
-            for (int i = 0; i < 17; i = i + 1) {
-                stack.push(Integer.valueOf(i));
-            }
-
-        Stack stack2 = new Stack(10);
-        
-        for (int i = 0; i<6; i = i+2){
-            stack2.push(i);
+         Stack stack = new Stack(4);
+         System.out.println(stack.size());
+        for (int i = 0; i < 5; i = i + 1) {
+            System.out.println(stack.push(Integer.valueOf(i)));
         }
-        System.out.println(stack2.push(42));
-        System.out.println(stack2.pop());
-        System.out.println(stack2.toString());
-        System.out.println(stack2.size());
+        for (int i = 0; i < 5; i = i + 1) {
+            System.out.println(stack.pop());
+            System.out.println(stack.size());
+        }
+        
+            
+
     }
 
 }
