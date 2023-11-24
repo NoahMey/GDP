@@ -17,9 +17,8 @@ public class Stack {
      * Kreiert einen neuen Stack mit der angegebenen Kapazität
      */
     public Stack(int capacity) {
-        // TODO Ihre Implementation
+        // TODO Ihre Implementation (done)
         data = new Integer[capacity];
-        System.out.println(data.length);
     }
 
     /**
@@ -28,7 +27,7 @@ public class Stack {
      * hinzugefügt werden konnte, ansonsten false.
      */
     boolean push(Integer element) {
-        // TODO Ihre Implementation
+        // TODO Ihre Implementation (done)
         if (entrys < data.length) {
             data[entrys] = element;
             entrys += 1;
@@ -42,7 +41,7 @@ public class Stack {
      * null zurückgegeben
      */
     Integer pop() {
-        // TODO Ihre Implementation
+        // TODO Ihre Implementation (done)
         if (entrys == 0) {
             return null;
         }
@@ -58,7 +57,7 @@ public class Stack {
      * sind.
      */
     int size() {
-        // TODO Ihre Implementation
+        // TODO Ihre Implementation (done)
         return entrys;
     }
 

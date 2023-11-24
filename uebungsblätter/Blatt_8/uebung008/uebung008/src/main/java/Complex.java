@@ -20,7 +20,7 @@ class Complex {
      */
     public Complex add(Complex other) {
         Complex result = new Complex (other.real +real, other.imag +imag);
-        // TODO Ihre Implementation
+        // TODO Ihre Implementation (done)
         return (result);
     }
 
@@ -30,7 +30,7 @@ class Complex {
     * Zahlen entsprechen.
     */
     public void addInplace(Complex other) {
-        // TODO Ihre Implementation
+        // TODO Ihre Implementation (done)
         real += other.real;
         imag += other.imag;
     }
@@ -41,7 +41,7 @@ class Complex {
      * als neue Komplexe Zahl zahl zurück.
      */
     Complex multiply(Complex other) {
-        //double realteil = (((other.real *real)-(other.imag*imag)) + (other.real*imag + other.imag *real));
+        // TODO Ihre Implementation (done)
         return (new Complex (((other.real *real)-(other.imag*imag)), ((other.real*imag) + (other.imag *real))));
     }
 
@@ -51,7 +51,7 @@ class Complex {
     * Zahlen entsprechen.
     */
     void multiplyInplace(Complex other) {
-        // TODO Ihre Implementation
+        // TODO Ihre Implementation (done)
         double newReal = ((other.real *real)-(other.imag*imag));
         double newImag =  ((other.real*imag) + (other.imag *real));
         real = newReal;

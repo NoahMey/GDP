@@ -116,13 +116,11 @@ class Mandelbrot {
                                       double panX, double panY, int maxIterations) {
         for(int i = 0; i < IMAGE_WIDTH; i++){
             for(int j = 0; j < IMAGE_HEIGHT; j++){
-                //setPixel(i, j, ColorPalette.getColor(computeMandelbrot(pixelPosToComplexNumber(i, j, scaling, panX, panY), maxIterations)));
+                // TODO Ihre Implementation (done)
+                //setPixel(i, j, ColorPalette.getColor(computeMandelbrot(pixelPosToComplexNumber(i, j, scaling, panX, panY), maxIterations))); (für farbigen Aufruf)
                 setPixel(i, j, ColorPalette.colorToGreyscale(ColorPalette.getColor(computeMandelbrot(pixelPosToComplexNumber(i, j, scaling, panX, panY), maxIterations))));
             }
         }
-
-        // TODO Ihre Implementation
-
     }
 
 
