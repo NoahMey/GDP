@@ -93,8 +93,7 @@ class Mandelbrot {
      * Dabei soll der realanteil i * scaling + panX sein und der
      * Imaginäranteil j * scaling + panY.
      */
-    Complex pixelPosToComplexNumber(int i, int j,
-                                    double scaling, double panX, double panY) {
+    Complex pixelPosToComplexNumber(int i, int j, double scaling, double panX, double panY) {
         // TODO Ihre Implementation (done)
         Complex result = new Complex(i*scaling+panX, j*scaling+panY);
 

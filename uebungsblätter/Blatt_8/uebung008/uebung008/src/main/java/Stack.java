@@ -8,7 +8,7 @@ public class Stack {
 
     // In diesem Array sollen die Elemente im Stack gespeichert werden
     Integer[] data;
-    int entrys = 0;
+    int entrys = 0; //atribut der Klasse
 
     // TODO fügen Sie hier weitere Felder hinzu, die Sie brauchen um den Stack zu implementieren
 
@@ -42,12 +42,12 @@ public class Stack {
      */
     Integer pop() {
         // TODO Ihre Implementation (done)
-        if (entrys == 0) {
+        if (entrys <= 0) {
             return null;
         }
         int delInt = data[entrys-1];
-        data[entrys-1] = null;
         entrys -= 1;
+        data[entrys] = null;
         return delInt;
         
     }
