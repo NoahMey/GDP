@@ -15,7 +15,9 @@ class PlotAxes {
      * (also den Punkt unten Links) sowie die Längen der x und y-Achse definiert ist.
      */
     PlotAxes(Point origin, double lengthXAxis, double lengthYAxis) {
-        // TODO - Ihre Implementation
+        this.origin = origin;
+        this.lengthXAxis = lengthXAxis;
+        this.lengthYAxis = lengthYAxis;
     }
 
     /**
@@ -24,7 +26,12 @@ class PlotAxes {
      * vom Turtle zu setzen.
      */
     void draw() {
-        // TODO - Ihre Implementation
+        TurtleUtils.setTurtlePosition(origin);
+        forward(lengthYAxis);
+        TurtleUtils.setTurtlePosition(origin);
+        turnRight(90);
+        forward(lengthXAxis);
+        reset();
     }
 
 
