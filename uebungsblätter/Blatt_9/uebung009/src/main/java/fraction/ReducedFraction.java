@@ -19,6 +19,6 @@ public class ReducedFraction extends Fraction {
 
 
     public static void main(String[] args) {
-      System.out.println(ReducedFraction(6, 3));
+      //System.out.println(ReducedFraction(6, 3));
     }
 }
