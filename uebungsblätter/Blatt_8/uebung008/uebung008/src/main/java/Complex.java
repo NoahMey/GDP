@@ -9,11 +9,8 @@ class Complex {
      */
     Complex(double real, double imag) {
         // TODO Ihre Implementation
-<<<<<<< HEAD
-=======
         this.real = real;
         this.imag = imag;
->>>>>>> 96ff0a4dd87c5bb5963d097d89f4c210633f283b
     }
 
     /**
@@ -22,15 +19,9 @@ class Complex {
      * als neue Komplexe Zahl zahl zurück.
      */
     public Complex add(Complex other) {
-<<<<<<< HEAD
-
-        // TODO Ihre Implementation
-        return null;
-=======
         Complex result = new Complex (other.real +real, other.imag +imag);
         // TODO Ihre Implementation (done)
         return (result);
->>>>>>> 96ff0a4dd87c5bb5963d097d89f4c210633f283b
     }
 
     /* Addiert die Komplexe Zahl other mit der durch dieses
@@ -39,13 +30,9 @@ class Complex {
     * Zahlen entsprechen.
     */
     public void addInplace(Complex other) {
-<<<<<<< HEAD
-        // TODO Ihre Implementation
-=======
         // TODO Ihre Implementation (done)
         real += other.real;
         imag += other.imag;
->>>>>>> 96ff0a4dd87c5bb5963d097d89f4c210633f283b
     }
 
     /**
@@ -54,13 +41,8 @@ class Complex {
      * als neue Komplexe Zahl zahl zurück.
      */
     Complex multiply(Complex other) {
-<<<<<<< HEAD
-        // TODO Ihre Implementation
-        return null;
-=======
         // TODO Ihre Implementation (done)
         return (new Complex (((other.real *real)-(other.imag*imag)), ((other.real*imag) + (other.imag *real))));
->>>>>>> 96ff0a4dd87c5bb5963d097d89f4c210633f283b
     }
 
     /* Multipliziert die Komplexe Zahl other mit der durch dieses
@@ -69,15 +51,11 @@ class Complex {
     * Zahlen entsprechen.
     */
     void multiplyInplace(Complex other) {
-<<<<<<< HEAD
-        // TODO Ihre Implementation
-=======
         // TODO Ihre Implementation (done)
         double newReal = ((other.real *real)-(other.imag*imag));
         double newImag =  ((other.real*imag) + (other.imag *real));
         real = newReal;
         imag = newImag;
->>>>>>> 96ff0a4dd87c5bb5963d097d89f4c210633f283b
     }
 
 
@@ -85,12 +63,6 @@ class Complex {
      * Gibt den Absolutwert der komplexen Zahl zurück
      */
     public double abs() {
-<<<<<<< HEAD
-        // TODO Ihre Implementation
-        return 0.0;
-    }
-
-=======
         double result = Math.sqrt((Math.pow(real, 2) + Math.pow(imag, 2)));
         return result;
     }
@@ -104,5 +76,4 @@ class Complex {
     //     System.out.println(nc.imag);
     //     System.out.println(nc.abs());
     // }
->>>>>>> 96ff0a4dd87c5bb5963d097d89f4c210633f283b
 }

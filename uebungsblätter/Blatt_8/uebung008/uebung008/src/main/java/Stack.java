@@ -7,13 +7,8 @@ import java.util.Arrays;
 public class Stack {
 
     // In diesem Array sollen die Elemente im Stack gespeichert werden
-<<<<<<< HEAD
-    Integer[] data = null; 
-    int size = 0;
-=======
     Integer[] data;
     int entrys = 0;
->>>>>>> 96ff0a4dd87c5bb5963d097d89f4c210633f283b
 
     // TODO fügen Sie hier weitere Felder hinzu, die Sie brauchen um den Stack zu implementieren
 
@@ -22,13 +17,8 @@ public class Stack {
      * Kreiert einen neuen Stack mit der angegebenen Kapazität
      */
     public Stack(int capacity) {
-<<<<<<< HEAD
-        // TODO Ihre Implementation
-        Integer[] data = new Integer[capacity];
-=======
         // TODO Ihre Implementation (done)
         data = new Integer[capacity];
->>>>>>> 96ff0a4dd87c5bb5963d097d89f4c210633f283b
     }
 
     /**
@@ -37,17 +27,10 @@ public class Stack {
      * hinzugefügt werden konnte, ansonsten false.
      */
     boolean push(Integer element) {
-<<<<<<< HEAD
-        // TODO Ihre Implementation
-        if (size < data.length){
-            data[size] = element;
-            size += 1;
-=======
         // TODO Ihre Implementation (done)
         if (entrys < data.length) {
             data[entrys] = element;
             entrys += 1;
->>>>>>> 96ff0a4dd87c5bb5963d097d89f4c210633f283b
             return true;
         }
         return false;
@@ -58,13 +41,6 @@ public class Stack {
      * null zurückgegeben
      */
     Integer pop() {
-<<<<<<< HEAD
-        // TODO Ihre Implementation
-        if(size == 0){
-            return null;
-        }
-        return data[size];
-=======
         // TODO Ihre Implementation (done)
         if (entrys == 0) {
             return null;
@@ -74,7 +50,6 @@ public class Stack {
         entrys -= 1;
         return delInt;
         
->>>>>>> 96ff0a4dd87c5bb5963d097d89f4c210633f283b
     }
 
     /**
@@ -82,13 +57,8 @@ public class Stack {
      * sind.
      */
     int size() {
-<<<<<<< HEAD
-        // TODO Ihre Implementation
-        return size;
-=======
         // TODO Ihre Implementation (done)
         return entrys;
->>>>>>> 96ff0a4dd87c5bb5963d097d89f4c210633f283b
     }
 
     /**
@@ -102,13 +72,6 @@ public class Stack {
     public static void main(String[] args) {
 
          // Schreiben Sie hier ihre eigenen Testprogramme
-<<<<<<< HEAD
-         Stack stack = new Stack(17);
-            for (int i = 0; i < 17; i = i + 1) {
-                stack.push(Integer.valueOf(i));
-            }
-        System.out.println(stack.toString());
-=======
          Stack stack = new Stack(4);
          System.out.println(stack.size());
         for (int i = 0; i < 5; i = i + 1) {
@@ -121,7 +84,6 @@ public class Stack {
         
             
 
->>>>>>> 96ff0a4dd87c5bb5963d097d89f4c210633f283b
     }
 
 }
