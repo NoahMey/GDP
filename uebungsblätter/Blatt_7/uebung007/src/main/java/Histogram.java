@@ -19,7 +19,7 @@ class Histogram {
      * Gibt die Anzahl Klassen (bins) zurück
      */
     int getNumberOfBins() {
-        return this.numberOfBins;
+        return this.numberOfBins; //this ist optional
     }
 
     /*
