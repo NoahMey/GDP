@@ -53,6 +53,10 @@ public class Fraction {
     protected void reduce() {
         // Ihr Code
         //findet ggt, es ist egal was das grössere element ist, da 2%6 = 2 gibt.
+        if (numerator<0 && denominator<0) {
+            numerator = -1*numerator;
+            denominator = -1* denominator;
+        }
             for(int ggt = denominator; ggt>0; ggt--){
                 if ((denominator%ggt == 0) && (numerator%ggt == 0)) {
                     denominator = denominator/ggt;

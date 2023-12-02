@@ -12,7 +12,8 @@ public class ReducedFraction extends Fraction {
     public ReducedFraction(int numerator, int denominator) {
         super(numerator, denominator);
 
-        this.reduce(); //ich will auf dem objekt arbeiten, welches hier erstellt wurde. Deshalb this. Aber geht auch ohne
+        reduce(); //ich will auf dem objekt arbeiten, welches hier erstellt wurde. Deshalb this. Aber geht auch ohne
+        //this.reduce();
         
         
     }
@@ -21,7 +22,7 @@ public class ReducedFraction extends Fraction {
 
 
     public static void main(String[] args) {
-      ReducedFraction rf = new ReducedFraction(4,6);
+      ReducedFraction rf = new ReducedFraction(-4,8);
       System.out.println(rf);
     }
 }

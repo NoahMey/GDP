@@ -17,7 +17,19 @@ public abstract class Rules implements SaveAccess {
      */
     public int countNeighbours(Field field, int row, int col) {
         // TODO: implement the function
-        return 0;
+        int numberOfNeighbours = 0;
+        if(get(field, row, col) == true){
+            numberOfNeighbours -= 1;
+        }
+
+        for(int rw = -1; rw <=1; rw ++){
+            for(int cl = -1; cl <= 1; cl ++){
+                if (get(field, row+rw, col+cl) == true){
+                    numberOfNeighbours += 1;
+                }
+            }
+        }
+        return numberOfNeighbours;
     }
 
     /**
@@ -28,7 +40,13 @@ public abstract class Rules implements SaveAccess {
      * @return Returns if the cell will be alive in the next generation.
      */
     public boolean willBeAlive(Field field, int row, int col) {
-        // TODO: implement the function
+        if (countNeighbours(field, row, col) == 3) {
+            return true;
+        }
+
+        if (countNeighbours(field, row, col) == 2) {
+            return get(field, row, col);
+        }
         return false;
     }
     
