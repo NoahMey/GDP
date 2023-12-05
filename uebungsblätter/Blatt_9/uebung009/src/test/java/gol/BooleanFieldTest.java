@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class BooleanFieldTest {
 
-    /*
+    
 
     @Test
     public void testSetAlive() {
@@ -56,5 +56,5 @@ public class BooleanFieldTest {
 
     }
 
-    */
+    
 }

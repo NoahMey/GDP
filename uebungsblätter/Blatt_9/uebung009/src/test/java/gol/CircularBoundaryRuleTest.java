@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class CircularBoundaryRuleTest {
 
-    /*
+    
     BooleanField field;
 
     public void resetAndInitializeField() {
@@ -44,5 +44,5 @@ public class CircularBoundaryRuleTest {
         assertEquals(field.isAlive(1, 9), rule.get(field, 11, 19));
 
     }
- */
+ 
 }
