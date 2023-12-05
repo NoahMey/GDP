@@ -53,16 +53,28 @@ public class Fraction {
     protected void reduce() {
         // Ihr Code
         //findet ggt, es ist egal was das grössere element ist, da 2%6 = 2 gibt.
-        if (numerator<0 && denominator<0) {
-            numerator = -1*numerator;
-            denominator = -1* denominator;
+        if (numerator <0 && denominator<0){
+            numerator *= -1;
+            denominator *= -1;
         }
-            for(int ggt = denominator; ggt>0; ggt--){
-                if ((denominator%ggt == 0) && (numerator%ggt == 0)) {
-                    denominator = denominator/ggt;
-                    numerator = numerator/ggt;
+        if (denominator < 0) {
+            denominator *= -1;
+            for(int ggt = denominator; ggt >0; ggt--){
+                if (denominator%ggt == 0 && numerator %ggt == 0) {
+                    denominator /= ggt;
+                    numerator /= ggt;
                 }
-            }    
+            }
+            denominator *= -1;
+        }
+        else{
+            for(int ggt = denominator; ggt >0; ggt--){
+                if (denominator%ggt == 0 && numerator %ggt == 0) {
+                    denominator /= ggt;
+                    numerator /= ggt;
+                }
+            }
+        }    
     }
 
 
@@ -81,9 +93,13 @@ public class Fraction {
 
     public static void main(String[] args) {
         // Ihr eigener testcode
-        Fraction f = new Fraction(1, 7);
-        f.reduce();
-        System.out.println(f);
+        //Fraction f = new Fraction(2, 1);
+        //System.out.println(4%-2);
+        //f.reduce();
+        int[] ni = new int[4];
+        
+        System.out.println(-4%3);
+        System.out.println(ni.length);
     }
 
 }
