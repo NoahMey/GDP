@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class IntegerFieldTest {
 
-    /*
+    
     @Test
     public void testSetAlive() {
         IntegerField field = new IntegerField(10, 10);
@@ -54,6 +54,6 @@ public class IntegerFieldTest {
         assertFalse(field.isAlive(2, 8));
 
     }
-    */
+    
 
 }

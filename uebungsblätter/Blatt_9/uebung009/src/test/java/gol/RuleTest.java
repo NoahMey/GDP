@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class RuleTest {
 
-    /*
+    
     BooleanField field;
 
     public void resetAndInitializeField() {
@@ -61,5 +61,5 @@ public class RuleTest {
         assertTrue(rule.willBeAlive(field, 1, 9));
         assertFalse(rule.willBeAlive(field, 2, 8));
     }
-    */
+    
 }

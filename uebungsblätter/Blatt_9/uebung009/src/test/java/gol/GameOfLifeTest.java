@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class GameOfLifeTest {
 
-    /*
+    
 
     BooleanField field;
 
@@ -69,5 +69,5 @@ public class GameOfLifeTest {
 
 
     }
- */
+ 
 }

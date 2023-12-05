@@ -14,9 +14,8 @@ public abstract class GameOfLife {
      */
     public GameOfLife() {
         // TODO implement the function
-        this.field = getField();
-        this.rules = getRules();
-        
+        this.field = createField();
+        this.rules = createRules();
     }
 
     /**
@@ -42,20 +41,19 @@ public abstract class GameOfLife {
      */
     public void evolve() {
         // TODO: implement the function
-        Field newField = createField();
-        this.field = newField;
-        // Field nField = this.field;
-        // for(int cols = 0; cols <= this.field.getHeight(); cols ++){
-        //     for(int rows = 0; rows <= this.field.getWidth(); rows ++){
-        //         if(this.rules.willBeAlive(field, rows, cols)){
-        //             nField.setAlive(rows, cols);
-        //         }
-        //         else{
-        //             nField.setNotAlive(rows, cols);
-        //         }
-        //     }
-        // }
-        // this.field = nField;
+        
+        Field nField = createField();
+        for(int cols = 0; cols < this.field.getHeight(); cols ++){
+            for(int rows = 0; rows < this.field.getWidth(); rows ++){
+                if(this.rules.willBeAlive(field, rows, cols)){
+                    nField.setAlive(rows, cols);
+                }
+                else{
+                    nField.setNotAlive(rows, cols);
+                }
+            }
+        }
+        this.field = nField;
     }
     
     /**
@@ -63,7 +61,7 @@ public abstract class GameOfLife {
      */
     public void print() {
         // TODO: implement the function
-        init(field);
+        field.print();
     }
 
     /**

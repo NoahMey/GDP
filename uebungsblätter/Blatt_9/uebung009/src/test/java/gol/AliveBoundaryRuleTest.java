@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class AliveBoundaryRuleTest {
 
-    /*
+    
     BooleanField field;
 
     public void resetAndInitializeField() {
@@ -47,5 +47,5 @@ public class AliveBoundaryRuleTest {
         assertTrue(rule.get(field, 11, 19));
 
     }
-    */
+    
 }
