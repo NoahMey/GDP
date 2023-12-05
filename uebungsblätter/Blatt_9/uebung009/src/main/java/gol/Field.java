@@ -45,7 +45,7 @@ public interface Field {
                     result += ".";
                 }
             }
-            System.out.println("");
+            System.out.println(result);
         }
     }
 }
