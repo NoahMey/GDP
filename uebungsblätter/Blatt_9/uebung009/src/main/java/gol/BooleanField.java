@@ -2,7 +2,7 @@ package gol;
 
 class BooleanField implements Field {
 
-    boolean[][] booleanField = null;
+    boolean[][] booleanField;
     
     public BooleanField(int height, int width){
         booleanField = new boolean[height][width];

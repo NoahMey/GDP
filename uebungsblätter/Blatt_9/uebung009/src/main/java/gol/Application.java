@@ -11,6 +11,10 @@ public class Application {
      * and print the field each time.
      */
     public static void main(String[] args) {
-        // TODO: implement the function
+        MyGameOfLife testField = new MyGameOfLife();
+        for (int iterations = 0; iterations < 100; iterations++) {
+            testField.print();
+        }
+
     }
 }
