@@ -61,7 +61,7 @@ public abstract class GameOfLife {
      */
     public void print() {
         // TODO: implement the function
-        field.print();
+        this.field.print();
     }
 
     /**
