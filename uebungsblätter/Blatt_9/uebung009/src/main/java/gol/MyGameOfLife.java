@@ -22,7 +22,7 @@ public class MyGameOfLife extends GameOfLife {
         for (int height = 0; height < field.getHeight(); height++) {
             for (int width = 0; width < field.getWidth(); width++) {
                 double random = Math.random();
-                if (random > 0.3) {
+                if (random > 0.5) {
                     field.setAlive(height, width);
                 } else {
                     field.setNotAlive(height, width);

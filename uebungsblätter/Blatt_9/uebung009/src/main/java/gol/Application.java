@@ -12,7 +12,7 @@ public class Application {
      */
     public static void main(String[] args) {
         MyGameOfLife testField = new MyGameOfLife();
-        for (int iterations = 0; iterations < 100; iterations++) {
+        for (int iterations = 0; iterations < 10; iterations++) {
             testField.print();
             System.out.println();
             testField.evolve();
