@@ -14,6 +14,8 @@ public class Application {
         MyGameOfLife testField = new MyGameOfLife();
         for (int iterations = 0; iterations < 100; iterations++) {
             testField.print();
+            System.out.println();
+            testField.evolve();
         }
 
     }

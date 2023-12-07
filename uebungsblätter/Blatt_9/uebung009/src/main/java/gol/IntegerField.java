@@ -9,8 +9,8 @@ class IntegerField implements Field {
     }
 
     @Override
-    public int isAlive(int row, int col) {
-        return intField[row][col];
+    public boolean isAlive(int row, int col) {
+        return intField[row][col] == 1;
     }
 
     @Override

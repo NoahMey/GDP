@@ -16,6 +16,7 @@ public abstract class GameOfLife {
         // TODO implement the function
         this.field = createField();
         this.rules = createRules();
+        init(field);
     }
 
     /**

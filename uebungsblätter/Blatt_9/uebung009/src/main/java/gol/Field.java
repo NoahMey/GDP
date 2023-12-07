@@ -36,8 +36,8 @@ public interface Field {
     default public void print() {
         // TODO: implement the function
         String result = "";
-        for (int col = 0; col<= getHeight(); col++){
-            for(int row = 0; row <=getWidth(); row++){
+        for (int col = 0; col< getHeight(); col++){
+            for(int row = 0; row <getWidth(); row++){
                 if (isAlive(row, col)) {
                     result += "@";
                 }
