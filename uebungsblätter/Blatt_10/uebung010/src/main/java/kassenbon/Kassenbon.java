@@ -4,8 +4,9 @@ import java.util.ArrayList;
 public class Kassenbon {
     
     ArrayList <Artikel> itemList = new ArrayList<>();
+    Adresse adresse;
     public Kassenbon(Adresse address){
-
+        this.adresse = address;
     }
 
 
@@ -15,10 +16,12 @@ public class Kassenbon {
     }
 
     public void print(){
-        for(Artikel artikel : itemList){
-            artikel.print();
 
-        }
+        adresse.print();
+
+        // for(Artikel artikel : itemList){
+        //     artikel.print();
+        // }
     }
     
 }
