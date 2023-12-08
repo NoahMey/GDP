@@ -6,7 +6,7 @@ public class Kasse {
     // sollte Ihr Programm kompilieren und einen Kassenzettel
     // wie im Aufgabenblatt beschrieben ausgeben.
     
-    /*
+    
     Adresse adresse = new Adresse(
         "Herbstmesse Basel",
         "Uni Basel",
@@ -20,6 +20,6 @@ public class Kasse {
     b.add( new Artikel("Magebrot",5,1.10));
     b.add( new Artikel("Glühwein",2,6));
     b.print();
-    */
+    
   }
 }
