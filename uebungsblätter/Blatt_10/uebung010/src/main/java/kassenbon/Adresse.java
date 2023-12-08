@@ -22,19 +22,25 @@ public class Adresse {
 
     private String center(int kassenbonBreite, String string){
         String returnString = "";
-        int einugVerans =  (kassenbonBreite - ((kassenbonBreite%string.length())/2)-2);
-        returnString += String.format("|%" + einugVerans + "s" +"%" +(string.length()/2-2)+ "s|", string, "");
-        returnString += "\n";
+        int gesamtleerschlag = kassenbonBreite - string.length();
+        int vorLeerschlag = (gesamtleerschlag/2)-1; //-1, da noch | am Anfang
+        int nachLeerschlag = vorLeerschlag;
+        if ((gesamtleerschlag % 2 != 0) &&(string.length() %2 != 0)) { //1element auf 3 felder= | |x| | vs 2 elemente auf 2 felder = | |x|x| |
+            nachLeerschlag += 1;
+        }
+        returnString = String.format("|%"+vorLeerschlag+"s"+string+"%"+nachLeerschlag+"s| \n", "", "");
         return returnString;
     }
 
     public void print(){
         int kassenbonBreite = 30;
         String printString = "";
-        // printString += center(kassenbonBreite, veranstaltung);
-        // printString += center(kassenbonBreite, organisation);
-        System.out.println(printString);
-        
+        printString += center(kassenbonBreite, veranstaltung);
+        printString += center(kassenbonBreite, organisation);
+        printString += center(kassenbonBreite, strasse+" "+nummer);
+        printString += center(kassenbonBreite, plz+" "+ort);
+        //printString -= "\n"; das würdie ich hier gerne tun ;)
+        System.out.println(printString.substring(0, printString.length()-2)); // workaround mit substring
         
         //System.out.println(String.format("|%" + einugVerans + "s" +"%" +(veranstaltung.length()/2-2)+ "s|", veranstaltung, ""));
         //System.out.println(String.format("|%" + einzugOrg + "s" +"%" +(einzugOrg.length()/2-2)+ "s|", einzugOrg, ""));

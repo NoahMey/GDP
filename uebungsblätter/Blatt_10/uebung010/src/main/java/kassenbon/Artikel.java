@@ -1,4 +1,5 @@
 package kassenbon;
+import java.util.ArrayList;
 
 public class Artikel {
 
@@ -16,12 +17,21 @@ public class Artikel {
         return this.quantity * this.price;
     }
 
-    public void print(){
-        String printString = "";
-        printString += (String.format("%-15S", this.item));
-        printString += String.format("%2.0f x %5.2f", this.quantity, this.price);
-        printString += "\n";
-        printString += String.format("%30.2f", this.price*this.quantity);
+    public static void print(ArrayList <Artikel>Artikellist){
+        String printString = "\n";
+        double total = 0.0; 
+        for(Artikel artikel : Artikellist){
+            printString += (String.format("%-15S", artikel.item));
+            printString += String.format("%2.0f x %5.2f", artikel.quantity, artikel.price);
+            printString += "\n";
+            printString += String.format("%30.2f", artikel.getPrice());
+            printString += "\n";
+            total += artikel.getPrice();
+        }
         System.out.println(printString);
+        System.out.println("------------------------------");
+        System.out.println(String.format("Total%25.2f", total));
+        System.out.println("==============================");
+
     }
 }
