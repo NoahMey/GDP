@@ -5,6 +5,7 @@ package generics;
  */
 public class SortedVerketteteListe {
 
+
     public static void main(String[] args) {
         //
     }
