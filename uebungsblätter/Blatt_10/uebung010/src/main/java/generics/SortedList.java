@@ -3,7 +3,7 @@ package generics;
 /**
  * SortedVerketteteListe
  */
-public class SortedList<T extends Comparable<T>> extends NodeList<T> {
+public class SortedList<T extends Comparable<T>> {
 
     NodeList<T> linkedList;
     int size;
@@ -16,6 +16,10 @@ public class SortedList<T extends Comparable<T>> extends NodeList<T> {
         // NodeList<T> sortedLinkedList = sortier(); zweiter Versuch automatisch die linkedList zu sortieren beim Konstruieren
         // this.linkedList = sortedLinkedList;
 
+    }
+
+    public void print(){
+        linkedList.printLinkedList();
     }
 
     public int getSize() { // size importieren von linked list
@@ -54,7 +58,13 @@ public class SortedList<T extends Comparable<T>> extends NodeList<T> {
         return currBNode;
     }
 
-    public NodeList<T> sortier() {
+    public void insert(T element){
+        linkedList.addNode(element);
+        sortier();
+        
+    }
+
+    public void sortier() {
 
         // this.printLinkedList();
         // System.out.println("L1");
@@ -66,7 +76,8 @@ public class SortedList<T extends Comparable<T>> extends NodeList<T> {
             sortedList.addNode(copyLinkedList.getSmallestNode().content);
             copyLinkedList.getSmallestNode().content = maxV;
         }
-        return sortedList;
+        this.linkedList = sortedList;
+        //linkedList.printLinkedList(); //eigentlich hätte ich gerne die linkedlist im constructor ersetzt mit sortedList. also sortier wird standardmässig aufgerufen.
         
     }
 

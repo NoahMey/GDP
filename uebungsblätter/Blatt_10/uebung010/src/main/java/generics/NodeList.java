@@ -1,6 +1,6 @@
 package generics;
 
-public class NodeList<T extends Comparable<T>> {
+public class NodeList<T extends Comparable<T>>{
 
     Node<T> firstElement;
 

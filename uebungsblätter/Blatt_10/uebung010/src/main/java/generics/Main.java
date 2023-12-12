@@ -10,9 +10,9 @@ public class Main {
         testLinked.addNode(23);
         //testLinked.printLinkedList();
         SortedList<Integer> sorList = new SortedList<>(testLinked); //Eig. bräuchte ich hier erst generics mit comparable, da ich hier erst sortieren möchte.
+        sorList.insert(12);
+        sorList.print();
         //System.out.println(sorList.getSize());
-        sorList.sortier().printLinkedList();
-        //sorList.printLinkedList(); //ich möchte dies benutzen anstatt .sortier()
         
     }
 }
