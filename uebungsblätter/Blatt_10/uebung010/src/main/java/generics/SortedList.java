@@ -10,6 +10,7 @@ public class SortedList<T extends Comparable<T>> {
 
     public SortedList(NodeList<T> linkedList) {
         this.linkedList = linkedList;
+        //sortier();
     }
 
     public int getSize() { // size importieren von linked list
@@ -51,18 +52,12 @@ public class SortedList<T extends Comparable<T>> {
     public NodeList<T> sortier() {
         NodeList<T> sortedList = new NodeList<T>();
         SortedList<T> copyLinkedList = this; //lol
-        // Node<T> currNode = linkedList.firstElement;
-        // Node<T> smallesNode = linkedList.firstElement;
-        // int currentPos = 0;
         T maxV = this.getBNode().content;
-
-        for (int x = 0; x < this.getSize(); x++) {
+        for (int x = 0; x <= this.getSize(); x++) {
             sortedList.addNode(copyLinkedList.getSmallestNode().content);
-            System.out.println("copyLinkedList.getSmallestNode().content");
             copyLinkedList.getSmallestNode().content = maxV;
-
         }
-        sortedList.printLinkedList();
+        //sortedList.printLinkedList();
         // copyLinkedList.linkedList.printLinkedList();
         return sortedList;
     }
