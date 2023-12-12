@@ -8,9 +8,12 @@ public class Main {
         testLinked.addNode(42);
         testLinked.addNode(11);
         testLinked.addNode(23);
-        testLinked.printLinkedList();
+        //testLinked.printLinkedList();
         SortedList<Integer> sorList = new SortedList<>(testLinked); //Eig. bräuchte ich hier erst generics mit comparable, da ich hier erst sortieren möchte.
         System.out.println(sorList.getSize());
+        sorList.sortier().printLinkedList();
+
+        
         
         
         
