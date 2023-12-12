@@ -3,14 +3,19 @@ package generics;
 /**
  * SortedVerketteteListe
  */
-public class SortedList<T extends Comparable<T>> {
+public class SortedList<T extends Comparable<T>> extends NodeList<T> {
 
     NodeList<T> linkedList;
     int size;
-
     public SortedList(NodeList<T> linkedList) {
         this.linkedList = linkedList;
-        //sortier();
+
+        // this.linkedList = sortier(); erster versuch automatisch die linkedList zu sortieren beim konstruieren.
+
+
+        // NodeList<T> sortedLinkedList = sortier(); zweiter Versuch automatisch die linkedList zu sortieren beim Konstruieren
+        // this.linkedList = sortedLinkedList;
+
     }
 
     public int getSize() { // size importieren von linked list
@@ -50,6 +55,10 @@ public class SortedList<T extends Comparable<T>> {
     }
 
     public NodeList<T> sortier() {
+
+        // this.printLinkedList();
+        // System.out.println("L1");
+
         NodeList<T> sortedList = new NodeList<T>();
         SortedList<T> copyLinkedList = this; //lol
         T maxV = this.getBNode().content;
@@ -57,9 +66,8 @@ public class SortedList<T extends Comparable<T>> {
             sortedList.addNode(copyLinkedList.getSmallestNode().content);
             copyLinkedList.getSmallestNode().content = maxV;
         }
-        //sortedList.printLinkedList();
-        // copyLinkedList.linkedList.printLinkedList();
         return sortedList;
+        
     }
 
 }
