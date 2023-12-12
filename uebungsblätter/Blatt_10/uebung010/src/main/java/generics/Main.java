@@ -11,8 +11,8 @@ public class Main {
         //testLinked.printLinkedList();
         SortedList<Integer> sorList = new SortedList<>(testLinked); //Eig. bräuchte ich hier erst generics mit comparable, da ich hier erst sortieren möchte.
         //System.out.println(sorList.getSize());
-        //sorList.sortier().printLinkedList();
-        sorList.printLinkedList(); //i want to get the same
+        sorList.sortier().printLinkedList();
+        //sorList.printLinkedList(); //ich möchte dies benutzen anstatt .sortier()
         
     }
 }
