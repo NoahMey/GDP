@@ -40,10 +40,14 @@ public class LinkedList {
      * Entfernt das erste Element in der Liste und gibt dessen Wert zurück.
      * ACHTUNG!!!  Passen Sie die Methodensignatur entsprechend Ihren Bedürfnissen an.
      */
-    public int removeFirst() {
-
+    public int removeFirst() throws Exception{
+        if (this.head == null) {
+            throw new ListException ("on empty list");
+        }  
+        int value = head.value;
+        this.head = this.head.next;
         // Ihre Implementation
-        return 0;
+        return value;
     }
 
     /**
@@ -51,8 +55,14 @@ public class LinkedList {
      * werden.
      */
     public void removeAll() {
-
-        // Ihre Implementation
+        while (true) {
+            try {
+                System.out.println("removed element: "+removeFirst());
+            } catch (Exception e) {
+                System.out.println(e);// wirft keine, aber gibt sie aus
+                break;
+            }
+        }
     }
 
     /**

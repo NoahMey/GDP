@@ -1,3 +1,12 @@
 package list;
 
-// Ihre Implementation der Klasse ListException
+/**
+ * ListException
+ */
+public class ListException extends Exception {
+
+    public ListException(String message) {
+        super(message);
+    }
+
+}

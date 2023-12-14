@@ -1,21 +1,3 @@
-# Gefundene Fehler
-Break gibt nicht zurück, deshalb return i, sodass i auch zurückgegeben wird. return -1 am ende, dass wenn nichts gefunden wird, das programm -1 zurückgibt. 
-public static int findChar(String s, char c) {
-    for (int i=0; i<s.length(); ++i){
-        if (s.charAt(i) == c)
-            return i;
-    }
-    return -1;
-}
-
-2. 
-this. is missing in constructor
-return is missing in method toString
-in for loop i <= accounts.length change to i< accounts.length
-Missing brackets in for loop that every account is printed.
-int i instead of i in for loop
-initialize the accounts array correctly, with a given array size.
-
 public class Account {
     private double value;
     private String name;
