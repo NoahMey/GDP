@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+import javax.tools.FileObject;
+
 public class ZipCode {
 
     Map<Integer, String> zipCodeMap = new HashMap<>();
@@ -14,7 +16,12 @@ public class ZipCode {
      * Daten.
      */
     ZipCode(File file) throws FileNotFoundException {
-        // Ihre Implementation
+        try {
+            File fileObject = new File("uebung011/src/test/resources/Adressdaten.csv");
+        } catch (Exception e) {
+            throw e;
+        }
+        
     }
 
     /**
@@ -35,6 +42,10 @@ public class ZipCode {
 
         // Ihre Implementation
         return null;
+    }
+
+    public static void main(String[] args) {
+        
     }
 
 }

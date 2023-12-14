@@ -59,7 +59,7 @@ public class LinkedList {
             try {
                 System.out.println("removed element: "+removeFirst());
             } catch (Exception e) {
-                System.out.println(e);// wirft keine, aber gibt sie aus
+                System.out.println(e);// wirft keine exc, aber gibt sie aus
                 break;
             }
         }
