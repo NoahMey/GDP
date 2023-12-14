@@ -17,7 +17,15 @@ public class ZipCode {
      */
     ZipCode(File file) throws FileNotFoundException {
         try {
-            File fileObject = new File("uebung011/src/test/resources/Adressdaten.csv");
+            Scanner scanObj = new Scanner(file);
+            while (scanObj.hasNextLine()) {
+                String currlentLine = scanObj.nextLine();
+                String[] splited = currlentLine.split(";");
+                zipCodeMap.put(Integer.parseInt(splited[2]), splited[1]); //(int oder Integer geht nicht?)splited[2] typecast mit (type)
+
+                //nameWithCantonsMap.put(splited[1], splited[0]);
+                nameWithCantonsMap.put(splited[1], new LinkedList<>().add(splited[0]));
+            }
         } catch (Exception e) {
             throw e;
         }
@@ -44,7 +52,14 @@ public class ZipCode {
         return null;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        File fileObject = new File("uebung011/src/test/resources/Adressdaten.csv");
+        try {
+            new ZipCode(fileObject);
+        } catch (Exception e) {
+            throw e;
+        }
+        
         
     }
 
