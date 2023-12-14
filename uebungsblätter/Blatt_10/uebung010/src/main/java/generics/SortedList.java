@@ -7,9 +7,19 @@ public class SortedList<T extends Comparable<T>> {
 
     NodeList<T> linkedList;
     int size;
-
     public SortedList(NodeList<T> linkedList) {
         this.linkedList = linkedList;
+
+        // this.linkedList = sortier(); erster versuch automatisch die linkedList zu sortieren beim konstruieren.
+
+
+        // NodeList<T> sortedLinkedList = sortier(); zweiter Versuch automatisch die linkedList zu sortieren beim Konstruieren
+        // this.linkedList = sortedLinkedList;
+
+    }
+
+    public void print(){
+        linkedList.printLinkedList();
     }
 
     public int getSize() { // size importieren von linked list
@@ -48,23 +58,27 @@ public class SortedList<T extends Comparable<T>> {
         return currBNode;
     }
 
-    public NodeList<T> sortier() {
+    public void insert(T element){
+        linkedList.addNode(element);
+        sortier();
+        
+    }
+
+    public void sortier() {
+
+        // this.printLinkedList();
+        // System.out.println("L1");
+
         NodeList<T> sortedList = new NodeList<T>();
         SortedList<T> copyLinkedList = this; //lol
-        // Node<T> currNode = linkedList.firstElement;
-        // Node<T> smallesNode = linkedList.firstElement;
-        // int currentPos = 0;
         T maxV = this.getBNode().content;
-
-        for (int x = 0; x < this.getSize(); x++) {
+        for (int x = 0; x <= this.getSize(); x++) {
             sortedList.addNode(copyLinkedList.getSmallestNode().content);
-            System.out.println("copyLinkedList.getSmallestNode().content");
             copyLinkedList.getSmallestNode().content = maxV;
-
         }
-        sortedList.printLinkedList();
-        // copyLinkedList.linkedList.printLinkedList();
-        return sortedList;
+        this.linkedList = sortedList;
+        //linkedList.printLinkedList(); //eigentlich hätte ich gerne die linkedlist im constructor ersetzt mit sortedList. also sortier wird standardmässig aufgerufen.
+        
     }
 
 }
