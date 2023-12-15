@@ -20,20 +20,25 @@ public class Adresse {
     }
     
 
-    private String center(int kassenbonBreite, String string){
-        String returnString = "";
-        int gesamtleerschlag = kassenbonBreite - string.length();
-        int vorLeerschlag = (gesamtleerschlag/2)-1; //-1, da noch | am Anfang
-        int nachLeerschlag = vorLeerschlag;
-        if ((gesamtleerschlag % 2 != 0) &&(string.length() %2 != 0)) { //1element auf 3 felder= | |x| | vs 2 elemente auf 2 felder = | |x|x| |
-            nachLeerschlag += 1;
-        }
-        returnString = String.format("|%"+vorLeerschlag+"s"+string+"%"+nachLeerschlag+"s| \n", "", "");
-        return returnString;
+    // private String center(int kassenbonBreite, String string){
+    //     String returnString = "";
+    //     int gesamtleerschlag = kassenbonBreite - string.length();
+    //     int vorLeerschlag = (gesamtleerschlag/2)-1; //-1, da noch | am Anfang
+    //     int nachLeerschlag = vorLeerschlag;
+    //     if ((gesamtleerschlag % 2 != 0) &&(string.length() %2 != 0)) { //1element auf 3 felder= | |x| | vs 2 elemente auf 2 felder = | |x|x| |
+    //         nachLeerschlag += 1;
+    //     }
+    //     returnString = String.format("|%"+vorLeerschlag+"s"+string+"%"+nachLeerschlag+"s| \n", "", "");
+    //     return returnString;
+    // }
+
+    String center(int kassenbonBreite, String string){
+        int vorschlag = (kassenbonBreite - string.length())/2;
+        int nachschlag = kassenbonBreite-string.length()-vorschlag;
+        return String.format("|%"+vorschlag+"s"+string+"%"+nachschlag+"s| \n", "", "");
     }
 
-    public void print(){
-        int kassenbonBreite = 30;
+    public void print(int kassenbonBreite){
         String printString = "";
         printString += center(kassenbonBreite, veranstaltung);
         printString += center(kassenbonBreite, organisation);

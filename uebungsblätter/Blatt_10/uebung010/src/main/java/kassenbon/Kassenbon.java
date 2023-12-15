@@ -11,9 +11,13 @@ public class Kassenbon {
         this.adresse = address;
     }
 
-    public ArrayList<Artikel> add(Artikel artikel) {
+    // public ArrayList<Artikel> add(Artikel artikel) {
+    //     itemList.add(artikel);
+    //     return itemList;
+    // }
+
+    public void add(Artikel artikel) {
         itemList.add(artikel);
-        return itemList;
     }
 
     void separator(int width) {
@@ -28,7 +32,7 @@ public class Kassenbon {
     public void print() {
         int width = 30;
         separator(width);
-        adresse.print();
+        adresse.print(width);
         separator(width);
         kassenbon.Artikel.print(itemList);
     }
