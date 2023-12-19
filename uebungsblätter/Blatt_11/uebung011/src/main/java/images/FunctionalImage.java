@@ -70,7 +70,7 @@ public class FunctionalImage {
      * der Mitte des Bildes zeigt (siehe Übungsblatt)
      */
     public static FunctionalImage createStrip() {
-        return null;
+        return new FunctionalImage(p -> Math.abs(p.x) < 0.5);
     }
 
     /**
@@ -78,21 +78,22 @@ public class FunctionalImage {
      * der Funktion die das Bild repräsentiert und der übergebenen Funktion.
      */
     public FunctionalImage compose(Function<Point, Point> before) {
-        return null;
+        return new FunctionalImage(p -> this.apply(before.apply(p)));
     }
 
     /**
      * Erzeugt eine Funktion, welche jeden Punkt um den Winkel theta rotiert.
      */
     public static Function<Point, Point> rotate(double theta) {
-        return null;
+        return p -> new Point(p.x*Math.cos(theta) - p.y * Math.sin(theta),
+                             p.y * Math.cos(theta)+ p.x * Math.sin(theta)); //formel auf Blatt
     }
 
     /**
      * Erzeugt eine "swirl" Transformation. Detaillierte Formel siehe Übungsblatt.
      */
     public static Function<Point, Point> swirl(double r) {
-        return null;
+        return p -> rotate(p.distOrigin() * 2 * Math.PI/r).apply(p);
     }
 
     public static void main(String[] args) {
@@ -100,8 +101,8 @@ public class FunctionalImage {
         try {
 
             createStrip()
-                    // .compose(rotate(Math.PI / 4))
-                    // .compose(swirl(1))
+                    .compose(rotate(Math.PI / 4))
+                    .compose(swirl(1))
                     .render(new File("image.png"));
 
         } catch (IOException e) {

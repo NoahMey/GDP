@@ -59,7 +59,7 @@ public class ZipCode {
      * Gibt eine Liste mit allen Kantonen zurück, in denen der übergebene Ortsname
      * vorkommt. Falls der Ort nicht existiert wird eine leere Liste zurückgegeben.
      */
-    LinkedList<String> getAllCantonsForName(String name) {
+    LinkedList<String> getAllCantonsForName(String name) { //oder mit .getOrDefault(name, LinkedList<String>())
         if (nameWithCantonsMap.containsKey(name)) {
             return nameWithCantonsMap.get(name);
         }else{
